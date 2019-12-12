@@ -10,8 +10,8 @@ export default class MarketStore {
 
   @action
   put = (name, price) => {
-      console.log("PUT");
     const { number } = this.root.counter;
+    if (number <= 0) return;
     // 존재하는지 찾고
     const exists = this.selectedItems.find(item => item.name === name);
     if (!exists) {

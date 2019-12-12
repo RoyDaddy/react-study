@@ -13,6 +13,6 @@ export default class CounterStore {
   }
 
   @action decrease = () => {
-    this.number--;
+    this.number = this.number <= 0 ? 0 : this.number - 1
   }
 }

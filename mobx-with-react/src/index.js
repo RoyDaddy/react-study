@@ -5,12 +5,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react';
 import RootStore from './stores';
+import {BrowserRouter} from 'react-router-dom';
 
 const root = new RootStore(); // *** 루트 스토어 생성
 
 ReactDOM.render(
   <Provider {...root}> {/* *** ...root 으로 스토어 모두 자동으로 설정 */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
